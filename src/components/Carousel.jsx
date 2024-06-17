@@ -28,7 +28,6 @@ const Carousel = ({ photos }) => {
     }
 
     useEffect(() => {
-        console.log("useEffect 1", intervalId, intervalId.current)
         intervalId.current = setInterval(() => {
             changePic("next");
         }, 3000);
@@ -45,10 +44,10 @@ const Carousel = ({ photos }) => {
                 <button onClick={() => changePic("prev")}>
                     <PrevIcon />
                 </button>
-                <picture className='text-center'>
+                <figure className='text-center'>
                     <img src={photos[currentIndex].image} alt={`pic-${currentIndex}`} />
                     <div>{photos[currentIndex].text}</div>
-                </picture>
+                </figure>
                 <button onClick={() => changePic("next")}>
                     <NextIcon />
                 </button>
@@ -56,11 +55,17 @@ const Carousel = ({ photos }) => {
             <div id='thumbnails'>
                 {
                     photos.map((p, index) => {
-                        return <img src={p.image}
-                            alt={`photo-${index}`}
-                            key={`photo-${index}`}
-                            onClick={() => changePic(index)}
-                        />
+                        return (
+                            <figure>
+                                <div className={index === currentIndex ? 'active-pic' : ''}></div>
+                                <img src={p.image}
+                                    alt={`photo-${index}`}
+                                    key={`photo-${index}`}
+                                    onClick={() => changePic(index)}
+                                    className={index === currentIndex ? 'active-pic' : ''}
+                                />
+                            </figure>
+                        )
                     })
                 }
             </div>

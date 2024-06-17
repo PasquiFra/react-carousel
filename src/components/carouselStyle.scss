@@ -1,6 +1,51 @@
-#thumbnails {
-    img {
-        height: 150px;
-        width: auto;
+#mainCarousel {
+    display: flex;
+    flex-basis: 100%;
+    justify-content: center;
+    border-radius: 50%;
+    margin: 25px 0;
+
+    button {
+        align-self: center;
+        height: 2.5rem;
+        border: 0;
+        background-color: transparent;
+
+        svg {
+            font-size: 2rem;
+
+        }
     }
+}
+
+#thumbnails {
+    overflow: hidden;
+    height: 150px;
+    width: 100vw;
+    margin: 25px 0;
+    display: flex;
+
+    figure {
+        height: 100%;
+        width: auto;
+
+        img {
+            height: 100%;
+            width: auto;
+
+            &.active-pic {
+                margin: 0 30px;
+                transform: scale(1.2);
+            }
+        }
+
+        div {
+            height: 3px;
+            width: 100%;
+
+
+        }
+
+    }
+
 }
