@@ -73,4 +73,5 @@ const Carousel = ({ photos }) => {
     )
 }
 
+
 export default Carousel

@@ -1,6 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Carousel from './components/Carousel'
 
+
 const photos = [
   {
     image: "https://picsum.photos/id/50/600/400",
